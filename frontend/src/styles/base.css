@@ -1,0 +1,55 @@
+
+  :root{
+    --bg-0:#ffffff;
+    --bg-1:#fbf8f9;
+    --bg-2:#f6eef1;
+    --surface:#ffffff;
+    --surface-hover:#fdf6f8;
+    --border: #e7e0e3;
+    --border-soft: #eee8ea;
+    --text-0:#241820;
+    --text-1:#514753;
+    --text-2:#8b8290;
+    --guinda:#9f1d46;
+    --guinda-dark:#6e1533;
+    --guinda-light:#c23b64;
+    --accent-a:#9f1d46;
+    --accent-b:#514753;
+    --accent-c:#c9982e;
+    --accent-d:#6e1533;
+    --accent-e:#b6afb8;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --shadow-lg: 0 18px 46px -22px rgba(111,21,51,0.22);
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; overflow-x:hidden; width:100%; }
+  body{
+    font-family:'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    color:var(--text-0);
+    background:#ffffff;
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+  }
+  h1,h2,h3,h4{ font-family:'Montserrat', sans-serif; letter-spacing:-0.01em; }
+
+  /* Fondo con acentos muy sutiles guinda/oro, solo en los bordes */
+  .bg-orbs{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; contain:strict; }
+  .orb{ position:absolute; border-radius:50%; filter:blur(110px); opacity:0.05; }
+  .orb-1{ width:420px; height:420px; background:var(--guinda); top:-160px; left:-120px; animation: float1 24s ease-in-out infinite; }
+  .orb-2{ width:380px; height:380px; background:var(--accent-c); bottom:-180px; right:-100px; animation: float2 28s ease-in-out infinite; }
+  .orb-3{ width:280px; height:280px; background:var(--guinda-light); top:42%; left:62%; animation: float3 32s ease-in-out infinite; opacity:0.03; }
+  @keyframes float1{ 0%,100%{ transform:translate(0,0);} 50%{ transform:translate(60px,80px);} }
+  @keyframes float2{ 0%,100%{ transform:translate(0,0);} 50%{ transform:translate(-70px,-50px);} }
+  @keyframes float3{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(-40px,60px) scale(1.08);} }
+
+  .noise{ display:none; }
+
+  .wrap{ position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:0 20px 60px; }
+
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:transparent; }
+  ::-webkit-scrollbar-thumb{ background:rgba(159,29,70,0.18); border-radius:10px; }
+  ::-webkit-scrollbar-thumb:hover{ background:rgba(159,29,70,0.32); }

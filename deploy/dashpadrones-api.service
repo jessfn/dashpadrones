@@ -1,0 +1,14 @@
+[Unit]
+Description=Dashpadrones API (FastAPI)
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/var/www/dashpadrones-git/backend
+EnvironmentFile=/var/www/dashpadrones-git/backend/.env
+ExecStart=/var/www/dashpadrones-git/backend/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8010
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
